@@ -14,8 +14,26 @@ class Nota {
         );
     }
 
-    mediaCA() {
-        return "SS";
+    mediaCA(mediaFinal) {
+
+        const mediaFinalToNum = Number(mediaFinal);
+
+        switch (true) {
+            case (mediaFinalToNum === 0):
+                return 'SR';
+            case (mediaFinalToNum < 3):
+                return 'II';
+            case (mediaFinalToNum < 5):
+                return 'MI';
+            case (mediaFinalToNum < 7):
+                return 'MM';
+            case (mediaFinalToNum < 9):
+                return 'MS';
+            case (mediaFinalToNum <= 10):
+                return 'SS'
+            default: 
+                return 'Erro'
+        };
     }
 }
 
